@@ -10,6 +10,7 @@ const Root = styled.div`
   background: ${(props) => props.theme.colors.primary};
   min-height: 100vh;
   box-sizing: border-box;
+  overflow-x: hidden;
 `;
 
 const Container = styled.div`

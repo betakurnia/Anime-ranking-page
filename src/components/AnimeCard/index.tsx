@@ -125,6 +125,7 @@ interface IProps {
 
 const AnimeCard = (props: IProps) => {
   const { rank, imageCover, title, release, lastest, rating } = props;
+
   const [showDetails, setShowDetails] = useState<boolean>(false);
   return (
     <Container>
@@ -153,9 +154,7 @@ const AnimeCard = (props: IProps) => {
             <DetailsInnerContainer>
               <DetailsTitle>Lastest :</DetailsTitle>
               <DetailsDescription>
-                {typeof lastest === "object" && lastest
-                  ? moment(lastest).format("ddd MMM D YYYY")
-                  : "now"}
+                {!!lastest ? moment(lastest).format("ddd MMM D YYYY") : "now"}
               </DetailsDescription>
             </DetailsInnerContainer>
             <DetailsInnerContainer>
